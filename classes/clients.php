@@ -42,9 +42,9 @@ class Client extends DB {
         return true;
     }
     public function update_contract($contract_id, $count) {
-        $sql = "UPDATE `contract` SET  `count` = :count,  `total` = :coun'  WHERE `contract`.`contract_id` = :contract_id";
+        $sql = "UPDATE `contract` SET  `count` = :count,  `total` = :total WHERE `contract`.`contract_id` = :contract_id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute(['contract_id'=>$contract_id, 'count' => $count]);
+        $stmt->execute(['contract_id'=>$contract_id, 'count' => $count, 'total' => $count]);
         return true;
     }
     

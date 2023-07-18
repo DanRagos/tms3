@@ -87,7 +87,8 @@ elseif($frequency =="Annually" ){
 
 $update_contract = $client -> update_contract($contract_id, $count);
 
-echo 'done';
+
+echo $count;
 
 }
 }
