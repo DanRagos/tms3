@@ -12,7 +12,7 @@
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-	  <img src="../img/line_jpg.jpg" class="img-fluid" style="width:25%;height:15%;padding-right:14px;" alt="...">
+	  <img src="../image/icon.jpg" class="img-fluid" style="width:25%;height:15%;padding-right:14px;" alt="...">
         <h5 class="modal-title " id="title1"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -108,5 +108,50 @@
     </div>
     </div>
   </div>
+
+
+
+  <div class="modal fade" id="addClient" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+	<div class="modal-header">
+	  <img src="../image/icon.jpg" class="img-fluid" style="width:25%;height:15%;padding-right:14px;" alt="...">
+        <h5 class="modal-title ">Add Client</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  <form id="add-client-form"role="form text-left" action="../inc/addClient.php" autocomplete="off"> 
+                  <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Client Name</label>
+                    <input type="text" name="clientName" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                  </div>
+                  <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Address</label>
+                    <input type="text" name= "clientAddress" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                  </div>
+				  <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Contact Person</label>
+                    <input type="text" name="contactPerson" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                  </div>
+				  <div class="input-group input-group-outline my-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="text" name= "emailAddress" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                  </div>
+                 <!-- <div class="form-check form-switch d-flex align-items-center">
+                    <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
+                    <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
+                  </div>
+				  !-->
+                
+                </form>
+      </div>
+      <div class="modal-footer">
+	  	<button type="button" class="btn btn-primary addClientBtn">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
     

@@ -42,7 +42,6 @@ include '../inc/dbc.inc.php';
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <!-- CSS Files -->
  <?php require '../inc/sources.php' ?>
 </head>
@@ -315,8 +314,49 @@ include '../inc/dbc.inc.php';
 					}
 			});
 
+
+
     }
   });
+
+  $(".addClientBtn").click(function(e){
+    if ($("#add-client-form")[0].checkValidity()) {
+      e.preventDefault();
+      $.ajax({
+				url:'../php/process.php',
+				method: 'post',
+				data: $("#add-client-form").serialize()+"&action=add_client",
+				success:function(response){
+          console.log(response);
+					Swal.fire({
+  title: 'Saving...',
+  showConfirmButton: false,
+  allowOutsideClick: false,
+  didOpen: () => {
+    Swal.showLoading();
+  },
+  willClose: () => {
+    Swal.hideLoading();
+  },
+  timer: 1200, // Adjust the duration as per your requirement
+  timerProgressBar: true,
+  toast: false,
+  icon: 'success'
+});
+					$("#add-client-form")[0].reset();
+					$("#addClient").modal('hide');
+          table.ajax.reload(null, false);
+					
+	
+
+					}
+			});
+
+
+
+    }
+  });
+
 
 
     var win = navigator.platform.indexOf('Win') > -1;
