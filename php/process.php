@@ -12,6 +12,18 @@ $response =  array(
 echo json_encode($response);
 }
 
+if (isset($_POST['action'])&& $_POST['action'] == 'add_client'){
+$clientName = $_POST['clientName'];
+$clientAddress = $_POST['clientAddress'];
+$contactPerson = $_POST['contactPerson'];
+$emailAddress = $_POST['emailAddress'];
+$imglink = '../image/uploads/mv santiago.webp';
+
+$addClient = $client->add_client($clientName,$clientAddress, $contactPerson, $emailAddress, $imglink);
+echo $addClient;
+
+}
+
 if (isset($_POST['action'])&& $_POST['action'] == 'add_contract'){
     $count = 0; 
 	$pms_count = 0;

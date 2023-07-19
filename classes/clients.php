@@ -27,6 +27,15 @@ class Client extends DB {
         
     }
 
+    public function add_client($clientName,$clientAddress, $contactPerson, $emailAddress, $imgLink){
+        $sql = "INSERT INTO `clients` (`client_name`, `client_address`, `contact_person`, `contact_email`, `imglink`) 
+        VALUES ( :clientName, :clientAddress, :contactPerson, :emailAddress, :imgLink)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['clientName'=>$clientName, 'clientAddress'=>$clientAddress, 'contactPerson'=>$contactPerson,
+                'emailAddress'=>$emailAddress, 'imgLink' => $imgLink]);
+        return true;
+    }
+
     public function create_contract($contract_id, $clientId, $machineType,$machine, $frequency, $first_chunk, $last_word, $ctr_status) {
         $sql = "INSERT INTO `contract` (`contract_id`, `client_id`, `machine_type`, `model`, `frequency`, `turn_over`, `coverage`, `status`) VALUES (:contract_id, :clientId, :machineType,:machine, :frequency, :first_chunk, :last_word, :ctr_status)";
         $stmt = $this->conn->prepare($sql);
