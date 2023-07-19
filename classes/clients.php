@@ -13,6 +13,14 @@ class Client extends DB {
         return $stmt->fetch();
         
     }
+    public function update_client($clientId,$clientName,$clientAddress,$contactPerson,$contact_email) {
+        $sql = "Update clients SET client_name = :clientName, client_address = :clientAddress, contact_person = :contactPerson, 
+        contact_email = :contact_email  where client_id = :clientId";
+        $stmt = $this->conn->prepare($sql);
+       $result=  $stmt->execute(['clientName'=>$clientName,'client_address'=>$clientAddress,'contactPerson'=>$contactPerson,'contact_email'=>$contact_email,
+    'clientId'=>$clientId]);
+        return $result;
+    }
     public function check_contract($contract_id) {
         $sql = 'Select * from contract where contract_id = :contract_id';
         $stmt = $this->conn->prepare($sql);

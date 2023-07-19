@@ -23,7 +23,23 @@ $addClient = $client->add_client($clientName,$clientAddress, $contactPerson, $em
 echo $addClient;
 
 }
+if (isset($_GET['action'])&& $_GET['action'] == 'editClientD'){
+	$clientId = $_GET['client_id'];
+	$editClientDetails = $client->client_details($clientId);
+	echo json_encode($editClientDetails);
+	}
+if (isset($_POST['action'])&& $_POST['action'] == 'update_client'){
+$clientId = $_POST['clientId'];
+$clientName = $_POST['clientName'];
+$clientAddress = $_POST['clientAddress'];
+$contactPerson = $_POST['contactPerson'];
+$emailAddress = $_POST['emailAddress'];
 
+$update_client = $client->update_client($clientId,$clientName,$clientAddress,$contactPerson,$emailAddress);
+echo ($update_client);
+}	
+
+	
 if (isset($_POST['action'])&& $_POST['action'] == 'add_contract'){
     $count = 0; 
 	$pms_count = 0;

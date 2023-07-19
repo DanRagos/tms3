@@ -154,4 +154,49 @@
   </div>
 </div>
 
+
+
+<div class="modal fade" id="editClientModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+	<div class="modal-header">
+	  <img src="../image/icon.jpg" class="img-fluid" style="width:25%;height:15%;padding-right:14px;" alt="...">
+        <h5 class="modal-title " id="Edit Client Details" >Add Client</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  <form id="edit-client-form"role="form text-left"  autocomplete="off"> 
+      <input type ="hidden" name="clientId" id="eClientId">
+                  <div class="input-group input-group-outline my-3 is-filled">
+                    <label class="form-label">Client Name</label>
+                    <input type="text" name="clientName" id="eClientName" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                  </div>
+                  <div class="input-group input-group-outline my-3 is-filled">
+                    <label class="form-label">Address</label>
+                    <input type="text" name= "clientAddress" id="eClientAddress" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                  </div>
+				  <div class="input-group input-group-outline my-3 is-filled">
+                    <label class="form-label">Contact Person</label>
+                    <input type="text" name="contactPerson" id="eContactPerson" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                  </div>
+				  <div class="input-group input-group-outline my-3 is-filled">
+                    <label class="form-label">Email Address</label>
+                    <input type="text" name= "emailAddress" id="eEmailAddress" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                  </div>
+                 <!-- <div class="form-check form-switch d-flex align-items-center">
+                    <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
+                    <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
+                  </div>
+				  !-->
+                
+                </form>
+      </div>
+      <div class="modal-footer">
+	  	<button type="button" class="btn btn-primary editClientBtn">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
     
