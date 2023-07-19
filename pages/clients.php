@@ -319,6 +319,59 @@ include '../inc/dbc.inc.php';
   });
 
 
+  $(document).on('click', '.editClientDetails',function() {
+    let client_id = $(this).attr('data-id');
+    alert('test');
+      // $.ajax ({
+      //   url: '../php/process.php',
+      //   method: 'GET',
+      //   data: { client_id: client_id, action:'addClientMachine'},
+      //   success:function (response){
+      //     let jsonData = JSON.parse(response);
+      //   $('#title1').text(jsonData.name);
+      //   $('#clientName').val(jsonData.name);
+      //   $('#clientId').val(jsonData.client_id);
+      
+      //   }
+      // })
+  });
+
+  $("#editClient").click(function(e){
+    alert('test');
+//     if ($("#add-contract-form")[0].checkValidity()) {
+//       e.preventDefault();
+//       $.ajax({
+// 				url:'../php/process.php',
+// 				method: 'post',
+// 				data: $("#add-contract-form").serialize()+"&action=add_contract",
+// 				success:function(response){
+//           console.log(response);
+// 					Swal.fire({
+//   title: 'Saving...',
+//   showConfirmButton: false,
+//   allowOutsideClick: false,
+//   didOpen: () => {
+//     Swal.showLoading();
+//   },
+//   willClose: () => {
+//     Swal.hideLoading();
+//   },
+//   timer: 1200, // Adjust the duration as per your requirement
+//   timerProgressBar: true,
+//   toast: false,
+//   icon: 'success'
+// });
+// 					$("#add-contract-form")[0].reset();
+// 					$("#addContract").modal('hide');
+					
+	
+
+// 					}
+// 			});
+
+//     }
+  });
+
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
       var options = {

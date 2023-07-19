@@ -49,7 +49,7 @@ array('db'=>'contact_email', 'dt' => ''),
             return '	<button  class="btn btn-block bg-gradient-primary mb-1 addClientMachine" data-bs-toggle="modal" data-id= " '.$d.'"data-bs-target="#addContract">
             Add	
           </button>
-        <button  class="btn btn-block bg-gradient-secondary mb-1" data-bs-toggle="modal" data-bs-target="#editClient">
+        <button  class="btn btn-block bg-gradient-secondary mb-1 editClientDetails" data-bs-toggle="modal" data-id="'.$d.'" data-bs-target="#editClient">
             Edit
           </button>';
         })
